@@ -1,0 +1,15 @@
+{
+    "name": "making-makers-make-things",
+    "version": "1.0.0",
+    "description": "A set of exercises to practice knowledge goals",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^29.7.0"
+    }
+}
