@@ -8,13 +8,13 @@ describe("array-implementation", () => {
         for (let i = 0; i < max; i++) {
             arr.nodes[i] = i;
         }
+        arr.length = max;
 
         return arr;
     }
 
     test("construction", () => {
         const list = myArrayFactory(3);
-        console.log(list);
         // Don't use `get(index)` so we can be sure constructor works for problem.js
         // for really TDD we'd want to use `get(index)`
         expect(list.nodes[0]).toBe(0);

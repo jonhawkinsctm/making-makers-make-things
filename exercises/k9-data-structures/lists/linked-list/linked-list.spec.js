@@ -1,6 +1,5 @@
 import { ListTestSuite } from "../shared/test-suite.js";
-// import { LinkedList, Node } from "./linked-list-problem";
-import { LinkedList, Node } from "./solution.js";
+import { LinkedList, Node } from "./linked-list-problem";
 
 describe("linked-list", () => {
     function linkedListFactory(max) {
@@ -19,7 +18,6 @@ describe("linked-list", () => {
 
     test("construction", () => {
         const list = linkedListFactory(3);
-        console.log(list);
         // Don't use `get(index)` so we can be sure constructor works for problem.js
         // for really TDD we'd want to use `get(index)`
         expect(list.head.value).toBe(0);
