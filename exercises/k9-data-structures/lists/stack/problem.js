@@ -72,18 +72,19 @@ export class Stack {
   }
 }
 
+
 /*
- Check whether a certain string has matching pairs of delimiters.
- Provide the time / space complexity for the algorithm implemented.
+Check whether a certain string has matching pairs of delimiters.
+Provide the time / space complexity for the algorithm implemented.
 
-  Note: The string will only be formed off the following accepted delimiters: "(", ")", "[", "]", "{", "}", """, "'".
-  e.g.
-  - Example string 1 : []()""{"[()]"}
-    Expected Result: Valid!
-  - Example string 2: []()""{"[()]]"}
-    Expected Result: Invalid! (13th character is not correct)
+Note: The string will only be formed off the following accepted delimiters: "(", ")", "[", "]", "{", "}", """, "'".
+e.g.
+- Example string 1 : []()""{"[()]"}
+  Expected Result: Valid!
+- Example string 2: []()""{"[()]]"}
+  Expected Result: Invalid! (13th character is not correct)
 
- Note:
-   - Consider edge cases as well (e.g. empty stack, etc.)
-   - Write tests for the happy path, and for at least one unhappy path.
- */
+Note:
+ - Consider edge cases as well (e.g. empty stack, etc.)
+ - Write tests for the happy path, and for at least one unhappy path.
+*/

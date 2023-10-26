@@ -52,17 +52,17 @@ export class Queue {
 
 
 /*
- Reverse the first "x" elements from a queue.
- Provide the time / space complexity for the algorithm implemented.
+Reverse the first "x" elements from a queue.
+Provide the time / space complexity for the algorithm implemented.
 
-  e.g.
-  - Example queue:
-      1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
-  - Example "x": 5.
-  - Result expected:
-      5 -> 4 -> 3 -> 2 -> 1 -> 6 -> 7 -> 8 -> 9 -> 10
+e.g.
+- Example queue:
+    1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
+- Example "x": 5.
+- Result expected:
+    5 -> 4 -> 3 -> 2 -> 1 -> 6 -> 7 -> 8 -> 9 -> 10
 
- Note:
-   - Consider edge cases as well (e.g. empty queue, negative "x" provided, etc.)
-   - Write tests for the happy path (e.g. for the example above), and for at least one unhappy path (e.g. negative "x").
- */
+Note:
+ - Consider edge cases as well (e.g. empty queue, negative "x" provided, etc.)
+ - Write tests for the happy path (e.g. for the example above), and for at least one unhappy path (e.g. negative "x").
+*/
