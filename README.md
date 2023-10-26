@@ -25,3 +25,5 @@ Guidelines on what to do will either be in the linked Readme file or in a commen
 - Data Structures:
   - [Linked List vs Array](./exercises/k9-data-structures/lists/linked-list-vs-array/README.md)
   - [Queues](./exercises/k9-data-structures/lists/queue/problem.js)
+  - [Stacks](./exercises/k9-data-structures/lists/stack/problem.js)
+  - [Hash tables](./exercises/k9-data-structures/lists/hashTable/problem.js)
