@@ -1,5 +1,5 @@
 import { ListTestSuite } from "../shared/test-suite.js";
-import { LinkedList, Node } from "./linked-list-problem";
+import { LinkedList, Node } from "./problem.js";
 
 describe("linked-list", () => {
     function linkedListFactory(max) {
