@@ -22,8 +22,11 @@ Following are a list of exercises to complete that *should* aid in your understa
 
 Guidelines on what to do will either be in the linked Readme file or in a comment.
 
-- Data Structures:
-  - [Linked List vs Array](./exercises/k9-data-structures/lists/linked-list-vs-array/README.md)
+### Data Structures:
+
+#### Lists
+
+  - [Linked List vs Array 🥊](./exercises/k9-data-structures/lists/linked-list-vs-array/README.md)
   - [Queues](./exercises/k9-data-structures/lists/queue/problem.js)
   - [Stacks](./exercises/k9-data-structures/lists/stack/problem.js)
   - [Hash tables](./exercises/k9-data-structures/lists/hashTable/problem.js)
