@@ -48,6 +48,13 @@ export class Tree {
         return false;
     }
 
+    find(key) {
+        for (let node of this.preOrderTraversal()) {
+            if (node.key === key) return node;
+        }
+        return undefined;
+    }
+
     remove(key) {
         for (let node of this.preOrderTraversal()) {
             const filtered = node.children.filter(c => c.key !== key);
@@ -57,12 +64,5 @@ export class Tree {
             }
         }
         return false;
-    }
-
-    find(key) {
-        for (let node of this.preOrderTraversal()) {
-            if (node.key === key) return node;
-        }
-        return undefined;
     }
 }
