@@ -30,3 +30,4 @@ Guidelines on what to do will either be in the linked Readme file or in a commen
   - [🇬🇧 Queues](./exercises/k9-data-structures/lists/queue/problem.js)
   - [🥞 Stacks](./exercises/k9-data-structures/lists/stack/problem.js)
   - [🌿 Hash tables](./exercises/k9-data-structures/lists/hashTable/problem.js)
+  - [🌳 Trees](./exercises/k9-data-structures/lists/tree/problem.js)
