@@ -8,6 +8,7 @@ export function ListTestSuite(factory) {
             expect(list.get(1)).toBe(1);
             expect(list.get(2)).toBe(2);
             expect(list.get(3)).toBe(null);
+            expect(list.get(10)).toBe(null);
         });
 
         test("size", () => {
@@ -53,6 +54,12 @@ export function ListTestSuite(factory) {
             expect(list.get(3)).toBe("bar");
             expect(list.get(4)).toBe(null);
             expect(list.size()).toBe(4);
+
+
+            const list2 = factory()
+            expect(list2.get(0)).toBe(null);
+            list2.append("boop");
+            expect(list2.get(0)).toBe("boop");
         });
 
         test("insertAt", () => {

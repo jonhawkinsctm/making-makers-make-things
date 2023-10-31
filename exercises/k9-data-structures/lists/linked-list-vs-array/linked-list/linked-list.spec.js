@@ -4,7 +4,9 @@ import { LinkedList, Node } from "./problem.js";
 describe("linked-list", () => {
     function linkedListFactory(max) {
         const list = new LinkedList();
-        list.head = new Node(0);
+        if (max > 0) {
+            list.head = new Node(0);
+        }
 
         let pointer = list.head;
 
