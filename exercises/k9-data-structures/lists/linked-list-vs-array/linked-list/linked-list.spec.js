@@ -12,7 +12,6 @@ describe("linked-list", () => {
             pointer.next = new Node(i);
             pointer = pointer.next;
         }
-
         return list;
     }
 

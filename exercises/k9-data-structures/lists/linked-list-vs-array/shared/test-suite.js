@@ -7,7 +7,8 @@ export function ListTestSuite(factory) {
             expect(list.get(0)).toBe(0);
             expect(list.get(1)).toBe(1);
             expect(list.get(2)).toBe(2);
-            expect(list.get(3)).toBe(null);
+            expect(() => { list.get(3) }).toThrow();
+            expect(() => { list.get(10) }).toThrow();
         });
 
         test("size", () => {
@@ -33,25 +34,25 @@ export function ListTestSuite(factory) {
             const list = factory(3);
 
             expect(list.size()).toBe(3);
-            expect(list.get(3)).toBe(null);
+            expect(() => { list.get(3)}).toThrow();
 
             list.prepend("Foo");
 
             expect(list.get(0)).toBe("Foo");
             expect(list.get(1)).toBe(0);
-            expect(list.get(4)).toBe(null);
+            expect(() => { list.get(4)}).toThrow();
             expect(list.size()).toBe(4);
         });
 
         test("append", () => {
             const list = factory(3);
-            expect(list.get(3)).toBe(null);
+            expect(() => { list.get(3)}).toThrow();
 
             list.append("bar");
 
             expect(list.get(2)).toBe(2);
             expect(list.get(3)).toBe("bar");
-            expect(list.get(4)).toBe(null);
+            expect(() => { list.get(4)}).toThrow();
             expect(list.size()).toBe(4);
         });
 
@@ -67,6 +68,14 @@ export function ListTestSuite(factory) {
             expect(list.get(1)).toBe("baz");
             expect(list.get(2)).toBe(1);
             expect(list.size()).toBe(3);
+
+            const list2 = factory(3);
+            expect(list2.size()).toBe(3);
+            expect(list2.get(0)).toBe(0);
+            expect(list2.get(1)).toBe(1);
+            expect(list2.get(2)).toBe(2);
+
+
         });
     });
 }
