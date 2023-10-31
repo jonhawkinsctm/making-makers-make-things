@@ -75,6 +75,9 @@ export function ListTestSuite(factory) {
             expect(list2.get(1)).toBe(1);
             expect(list2.get(2)).toBe(2);
 
+            list2.insertAt(3, "baz");
+            expect(list2.get(3)).toBe("baz");
+
 
         });
     });

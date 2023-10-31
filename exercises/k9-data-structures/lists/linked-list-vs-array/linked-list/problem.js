@@ -61,7 +61,7 @@ export class LinkedList {
     }
     insertAt(index, value) {
 
-        if (index > this.size() - 1) {
+        if (index > this.size()) {
             throw new Error ('index out of bounds');
         }
 
@@ -71,6 +71,10 @@ export class LinkedList {
 
         if (index === 0) {
             this.prepend(value);
+        }
+
+        if (index === this.size()) {
+            this.append(value);
         }
 
         let pointer = this.head;
