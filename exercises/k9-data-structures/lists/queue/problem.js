@@ -53,6 +53,7 @@ export class Queue {
 
     // time complexity O(n)
     // Space complexity O(1)
+
     if (this.isEmpty()) {
       return [];
     }
@@ -71,13 +72,14 @@ export class Queue {
     }
 
     return this.queueItems;
+
   }
 
 
   reverseElementsQueue(num = this.queueItems.length) {
 
     // time complexity O(n)
-    // Space complexity O(n)
+    // Space complexity O(n) - O(1) if you don't include the size of the array?
 
     const lengthArray = this.queueItems.length
 
@@ -90,11 +92,8 @@ export class Queue {
     }
 
     let output = new Array(lengthArray);
-    console.log(output);
 
     let i = num - 1;
-
-    console.log(this.queueItems)
 
     for (let j = 0; j < lengthArray; j++) {
         if (i >= 0) {
