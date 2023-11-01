@@ -50,12 +50,15 @@ export class Queue {
   }
 
   reverseFirstXElements(num = this.queueItems.length) {
+
+    // time complexity O(n)
+    // Space complexity O(1)
     if (this.isEmpty()) {
       return [];
     }
 
     if (num < 0 || num > this.queueItems.length) {
-      throw new Error("index outside of range")
+      throw new Error("index outside of range");
     }
 
     let i = 0;
@@ -69,10 +72,45 @@ export class Queue {
 
     return this.queueItems;
   }
+
+
+  reverseElementsQueue(num = this.queueItems.length) {
+
+    // time complexity O(n)
+    // Space complexity O(n)
+
+    const lengthArray = this.queueItems.length
+
+    if (this.isEmpty()) {
+      return [];
+    }
+
+    if (num < 0 || num > lengthArray) {
+      throw new Error("index outside of range");
+    }
+
+    let output = new Array(lengthArray);
+    console.log(output);
+
+    let i = num - 1;
+
+    console.log(this.queueItems)
+
+    for (let j = 0; j < lengthArray; j++) {
+        if (i >= 0) {
+          output[i] = this.queueItems[j];
+          i--;
+        } else {
+          output[j] = this.queueItems[j];
+        }
+    }
+
+    return output;
+
+  }
 }
 
-// time complexity O(n)
-// Space complexity O(1)
+
 
 
 

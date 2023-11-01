@@ -88,5 +88,17 @@ describe("Generic queue tests", () => {
 
       expect(queue.reverseFirstXElements(4)).toStrictEqual([3, 3, 2, 1, 4, 5])
     })
+
+    test("reverse first 3 elements of list using queue", () => {
+      const queue = new Queue();
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+      queue.enqueue(3);
+      queue.enqueue(4);
+      queue.enqueue(5);
+
+      expect(queue.reverseElementsQueue(4)).toStrictEqual([3, 3, 2, 1, 4, 5])
+    })
   })
 });
