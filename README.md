@@ -31,3 +31,4 @@ Guidelines on what to do will either be in the linked Readme file or in a commen
   - [🥞 Stacks](./exercises/k9-data-structures/lists/stack/problem.js)
   - [🌿 Hash tables](./exercises/k9-data-structures/lists/hashTable/problem.js)
   - [🌳 Trees](./exercises/k9-data-structures/lists/tree/problem.js)
+  - [📈 Graphs](./exercises/k9-data-structures/lists/graph/problem.js)

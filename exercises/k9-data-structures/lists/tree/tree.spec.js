@@ -12,7 +12,7 @@ describe('The Orlov meerkat family tree', () => {
         tree.insert(1, 19, 'Vassily');
     });
 
-    test('tree successfully built', () => {
+    test('successfully built', () => {
         expect(tree.root.hasChildren).toBe(true);
     });
 
