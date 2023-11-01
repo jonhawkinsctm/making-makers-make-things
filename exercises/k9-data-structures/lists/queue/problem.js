@@ -48,7 +48,32 @@ export class Queue {
   get() {
      return this.queueItems;
   }
+
+  reverseFirstXElements(num = this.queueItems.length) {
+    if (this.isEmpty()) {
+      return [];
+    }
+
+    if (num < 0 || num > this.queueItems.length) {
+      throw new Error("index outside of range")
+    }
+
+    let i = 0;
+    let j = num - 1;
+
+    while (i < j) {
+      [this.queueItems[i], this.queueItems[j]] = [this.queueItems[j], this.queueItems[i]];
+      i++;
+      j--;
+    }
+
+    return this.queueItems;
+  }
 }
+
+// time complexity O(n)
+// Space complexity O(1)
+
 
 
 /*
