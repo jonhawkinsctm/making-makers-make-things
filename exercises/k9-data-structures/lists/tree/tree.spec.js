@@ -40,25 +40,25 @@ describe('The Orlov meerkat family tree', () => {
         expect([...tree.postOrderTraversal()].map(x => x.value)).toEqual(['Bogdan', 'Oleg', 'Maiya', 'Vassily', 'Aleksandr']);
     });
 
-    // describe('when Maiya and her child are disowned after "the mongoose affair" ', () => {
-    //     beforeEach(() => {
-    //         tree.remove(12);
-    //     });
-    //
-    //     test('Maiya has been removed from the family tree', () => {
-    //         expect(tree.find(12)).toBe(undefined);
-    //     });
-    //
-    //     test('Oleg has been sent to an orphanage', () => {
-    //         expect(tree.find(27)).toBe(undefined);
-    //     });
-    //
-    //     test('The remaining family using pre-order traversal', () => {
-    //         expect([...tree.preOrderTraversal()].map(x => x.value)).toEqual(['Aleksandr', 'Bogdan', 'Vassily']);
-    //     });
-    //
-    //     test('The remaining family using post-order traversal', () => {
-    //         expect([...tree.postOrderTraversal()].map(x => x.value)).toEqual(['Bogdan', 'Vassily', 'Aleksandr']);
-    //     });
-    // });
+    describe('when Maiya and her child are disowned after "the mongoose affair" ', () => {
+        beforeEach(() => {
+            tree.remove(12);
+        });
+
+        test('Maiya has been removed from the family tree', () => {
+            expect(tree.find(12)).toBe(undefined);
+        });
+
+        test('Oleg has been sent to an orphanage', () => {
+            expect(tree.find(27)).toBe(undefined);
+        });
+
+        test('The remaining family using pre-order traversal', () => {
+            expect([...tree.preOrderTraversal()].map(x => x.value)).toEqual(['Aleksandr', 'Bogdan', 'Vassily']);
+        });
+
+        test('The remaining family using post-order traversal', () => {
+            expect([...tree.postOrderTraversal()].map(x => x.value)).toEqual(['Bogdan', 'Vassily', 'Aleksandr']);
+        });
+    });
 });

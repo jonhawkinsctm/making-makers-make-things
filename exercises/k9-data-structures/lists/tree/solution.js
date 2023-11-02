@@ -58,6 +58,7 @@ export class Tree {
     remove(key) {
         for (let node of this.preOrderTraversal()) {
             const filtered = node.children.filter(c => c.key !== key);
+            console.log(filtered)
             if (filtered.length !== node.children.length) {
                 node.children = filtered;
                 return true;

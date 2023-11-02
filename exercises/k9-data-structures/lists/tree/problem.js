@@ -38,9 +38,31 @@ export class Tree {
         yield node;
     };
 
-    insert(parentNodeKey, key, value = key) {};
-    find(key) {};
-    remove(key) {};
+    insert(parentNodeKey, key, value = key) {
+        let parentNode = this.find(parentNodeKey);
+        let newNode = new TreeNode(key, value, parentNode);
+        parentNode.children.push(newNode);
+
+    };
+    find(key) {
+        for (let node of this.preOrderTraversal()) {
+            if (node.key === key) {
+                return node;
+            }
+        }
+        return undefined
+    };
+    remove(key) {
+        for (let node of this.preOrderTraversal()) {
+            const filtered = node.children.filter(c => c.key !== key);
+            console.log(filtered)
+            if (filtered.length !== node.children.length) {
+                node.children = filtered;
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 /*
@@ -52,4 +74,19 @@ Exercise -
 method and find out who is left in the Orlov meerkat family tree (tests are commented out for this part).
 
 Extra points for an explanation of the use of generator functions
+
+The generator functions do the following:
+
+preOrderTraversal:
+
+This traverses all of the nodes, starting from the root node (or a node of your choosing)
+through to all the of children node and their children etc.
+The 'yeild node' part means that when you run the functions
+you can access each node through a loop function or similar.
+
+postOrderTraversal
+
+This traverses through all of the nodes first before yielding
+Therefore to loop through these would be to loop through all
+the children nodes first and up through the tree, finishing at the root node.
 */
