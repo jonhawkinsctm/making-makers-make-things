@@ -59,17 +59,12 @@ export class LinkedList {
             if (!pointer.next) return null
             pointer = pointer.next;
         }
-
         return pointer.value
     }
     insertAt(index, value) {
 
         if (index > this.size()) {
             throw new Error ('index out of bounds');
-        }
-
-        if (!this.head) {
-            throw new Error('empty list');
         }
 
         if (index === 0) {

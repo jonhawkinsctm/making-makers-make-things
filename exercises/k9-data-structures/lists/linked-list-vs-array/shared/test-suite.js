@@ -7,7 +7,7 @@ export function ListTestSuite(factory) {
             expect(list.get(0)).toBe(0);
             expect(list.get(1)).toBe(1);
             expect(list.get(2)).toBe(2);
-            expect(() => { list.get(3) }).toThrowError(new Error('index out of bounds'));
+            expect(() => { list.get(3) }).toThrow('index out of bounds');
             expect(() => { list.get(10) }).toThrowError(new Error('index out of bounds'));
         });
 
