@@ -30,7 +30,7 @@ export class LinkedList {
             pointer = pointer.next
         }
 
-        pointer.next = new Node (value);
+        pointer.next = new Node(value);
     }
     size() {
         let count = 0;
@@ -46,7 +46,10 @@ export class LinkedList {
     get(index) {
 
         if (index > this.size() - 1) {
-            throw new Error ('index out of bounds')
+            console.log(this.size())
+            console.log(index)
+            console.log("error thrown")
+            throw new Error('index out of bounds')
         }
 
         if (!this.head) return null;
