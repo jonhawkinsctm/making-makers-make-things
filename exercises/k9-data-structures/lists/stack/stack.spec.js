@@ -57,3 +57,45 @@ describe("Generic stack tests", () => {
   });
 
 });
+
+describe("test delimiter stacks", () => {
+  test("empty string", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("")).toBe("Invalid")
+  });
+
+  test("incorrect characters", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("()whoops")).toBe("Invalid")
+  })
+
+  test("base case", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("()")).toBe("Valid")
+  })
+
+  test("false base case", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("(")).toBe("Invalid")
+  })
+
+  test("complex string pass", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("[]()\"\"{\"[()]\"}")).toBe("Valid")
+  })
+
+  test("complex string fail", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("[]()\"\"{\"[()]]\"}")).toBe("Invalid")
+  })
+
+  test("quotes only fail", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("\"\"\"")).toBe("Invalid")
+  })
+
+  test("quotes only pass", () => {
+    const stack = new Stack();
+    expect(stack.isDelimiter("\"\"\"\"")).toBe("Valid")
+  })
+})

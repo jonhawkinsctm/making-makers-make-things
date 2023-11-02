@@ -1,4 +1,5 @@
 export class Stack {
+
   constructor() {
     //a simple array is used to implement a stack (LIFO model).
     this.stackItems = [];
@@ -69,6 +70,55 @@ export class Stack {
   //Returns the stack items (in the correct order) - mainly used for testing.
   get() {
     return this.stackItems;
+  }
+
+  isDelimiter(string) {
+    this.stackItems = string.split("")
+
+    const delimiters = ['(', ')', '{', '}', '[', ']','"', "'"]
+    const delimitersHash = {")" : "(", "}": "{", "]": "[", "'": "'", '"': '"'}
+
+    // if empty or an odd number of characters return Invalid
+    if (string === "" || this.stackItems.length % 2 !== 0) {
+      return "Invalid";
+    }
+
+    // return Invalid if non delimiter chars used
+    for (const char of string) {
+      if (!delimiters.includes(char)) {
+        return "Invalid"
+      }
+    }
+
+    let workingStack = []
+
+    while (this.stackItems.length > 0) {
+
+      // checks working stack and if empty adds top item from stack (removes from stack)
+      if (workingStack.length === 0) {
+        workingStack.push(this.stackItems.pop())
+      }
+
+      // sets the top of stack and top of working stack to compare.
+      // If a match then deletes from working stack
+      // If not a match adds the current item to top of working stack for comparison later
+      let current = this.stackItems.pop();
+      let topWorkingStack = workingStack[workingStack.length - 1];
+
+      if (delimitersHash[topWorkingStack] === current) {
+        workingStack.pop();
+      } else {
+        workingStack.push(current)
+      }
+    }
+
+    // once stack is empty, if the working stack is empty
+    // i.e. everything had a pair in the correct order
+    // return Valid, else Invalid
+    if (workingStack.length !== 0 && this.stackItems.length === 0) {
+      return "Invalid"
+    }
+    return "Valid"
   }
 }
 
