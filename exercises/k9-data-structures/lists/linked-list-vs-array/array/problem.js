@@ -28,6 +28,8 @@ export class MyArray {
         }
         return null;
     }
+
+    // looping backwards through the array means you don't need to create a copy of the array (see solutions)
     insertAt(index, value) {
         const temp = { ...this.nodes }
         this.nodes[index] = value
@@ -43,7 +45,3 @@ export class MyArray {
         }
     }
 }
-
-[1, 2, 3]
-[1, 2, 3, 3]
-[1, 2, 2, 2]
