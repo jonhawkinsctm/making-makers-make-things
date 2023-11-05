@@ -16,23 +16,56 @@ export class Graph {
         }
     }
 
-    removeNode(key) {}
+    removeNode(key) {
+        const removedNode = this.findNode(key)
+        this.nodes = this.nodes.filter(node => node !== removedNode)
+        this.
+    }
 
-    removeEdge(a, b) {}
+    removeEdge(a, b) {
+        const key = JSON.stringify([a, b]);
+        this.edges.delete(key);
+    }
 
-    findNode(key) {}
+    findNode(key) {
+        for (const item of this.nodes) {
+            if (item['key'] === key) {
+                return item;
+            }
+        }
+    }
 
-    hasEdge(a, b) {}
+    hasEdge(a, b) {
+        return this.adjacent(a).includes(b)
+    }
 
     setEdgeWeight(a, b, weight) {}
 
     getEdgeWeight(a, b) {}
 
-    adjacent(key) {}
+    adjacent(key) {
+        let adjacentKeys = [];
+        for (const edge of this.edges) {
+            if (edge[1]['a'] === key) {
+                adjacentKeys.push(edge[1]['b']);
+            }
+        }
+     return adjacentKeys
+    }
 
-    indegree(key) {}
+    indegree(key) {
+        let count = 0;
+        for (const edge of this.edges) {
+            if (edge[1].b === key) {
+                count += 1;
+            }
+        }
+        return count;
+    }
 
-    outdegree(key) {}
+    outdegree(key) {
+        return this.adjacent(key).length
+    }
 }
 
 /*
