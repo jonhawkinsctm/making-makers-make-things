@@ -81,13 +81,13 @@ describe('Graph', () => {
         });
     });
 
-    // describe('when edge has weight', () => {
-        // beforeEach(() => {
-        //     graph.setEdgeWeight('d', 'a', 5);
-        // });
-        //
-        // test('can can retrieve weight value', () => {
-        //     expect(graph.getEdgeWeight('d', 'a')).toEqual(5);
-        // });
-    // });
+    describe('when edge has weight', () => {
+        beforeEach(() => {
+            graph.setEdgeWeight('d', 'a', 5);
+        });
+
+        test('can can retrieve weight value', () => {
+            expect(graph.getEdgeWeight('d', 'a')).toEqual(5);
+        });
+    });
 });

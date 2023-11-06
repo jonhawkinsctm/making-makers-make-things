@@ -19,7 +19,11 @@ export class Graph {
     removeNode(key) {
         const removedNode = this.findNode(key)
         this.nodes = this.nodes.filter(node => node !== removedNode)
-        this.
+        for (const [nodes, direction] of this.edges) {
+            if (nodes.includes(key)) {
+                this.edges.delete(nodes)
+            }
+        }
     }
 
     removeEdge(a, b) {
@@ -39,9 +43,20 @@ export class Graph {
         return this.adjacent(a).includes(b)
     }
 
-    setEdgeWeight(a, b, weight) {}
+    setEdgeWeight(a, b, weight) {
+        const key = JSON.stringify([a, b]);
+        const updatedValue = {a: a, b: b, weight: weight};
+        this.edges.set(key, updatedValue);
 
-    getEdgeWeight(a, b) {}
+    }
+
+    getEdgeWeight(a, b) {
+        for (const [key, value] of this.edges) {
+            if (key === JSON.stringify([a, b])) {
+                return value.weight
+            }
+        }
+    }
 
     adjacent(key) {
         let adjacentKeys = [];
@@ -55,8 +70,8 @@ export class Graph {
 
     indegree(key) {
         let count = 0;
-        for (const edge of this.edges) {
-            if (edge[1].b === key) {
+        for (const [edgeKey, value] of this.edges) {
+            if (value.b === key) {
                 count += 1;
             }
         }
