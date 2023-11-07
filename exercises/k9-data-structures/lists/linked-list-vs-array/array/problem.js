@@ -9,9 +9,39 @@ export class MyArray {
         return this;
     }
 
-    size() {}
-    prepend(index) {}
-    get(index) {}
-    insertAt(index, value) {}
-    forEach(callback) {}
+    size() {
+        return this.length
+    }
+    prepend(value) {
+        const temp = {};
+        temp[0] = value;
+        for (let i = 0; i < this.length; i++) {
+            temp[i + 1] = this.nodes[i]
+        }
+        this.nodes = temp;
+        this.length++
+        return this
+    }
+    get(index) {
+        if (index < this.length) {
+            return this.nodes[index];
+        }
+        return null;
+    }
+
+    // looping backwards through the array means you don't need to create a copy of the array (see solutions)
+    insertAt(index, value) {
+        const temp = { ...this.nodes }
+        this.nodes[index] = value
+        for (let i = index + 1; i < this.length + 1; i++) {
+            this.nodes[i] = temp[i - 1]
+        }
+        this.length++
+        return this
+    }
+    forEach(callback) {
+        for (let i = 0; i < this.length; i++) {
+            callback(i);
+        }
+    }
 }
