@@ -15,6 +15,9 @@ describe('Graph', () => {
         graph.addEdge('b', 'c');
         graph.addEdge('c', 'b');
         graph.addEdge('d', 'a');
+
+        console.log(graph.edges)
+        console.log(graph.nodes)
     });
 
     test('successfully built',() => {
@@ -59,6 +62,7 @@ describe('Graph', () => {
        });
 
        test('has correct edge values', () => {
+           console.log(graph.edges)
            expect([...graph.edges.values()].map(({ a, b }) => `${a} => ${b}`)).toEqual(['a => c', 'b => c', 'd => a']);
        });
     });
@@ -85,5 +89,5 @@ describe('Graph', () => {
         test('can can retrieve weight value', () => {
             expect(graph.getEdgeWeight('d', 'a')).toEqual(5);
         });
-    })
+    });
 });
