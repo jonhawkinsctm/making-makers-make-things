@@ -6,7 +6,12 @@ export class HashTable {
 
   //The hashing function - this is a simple implementation of a hash to help with the time / space complexity.
    #hash(key) {
-    return key.toString().length % this.hashTable.length;
+    if (typeof key === 'string') {
+      return key.toString().length % this.hashTable.length;
+    } else if (typeof key === 'number' && key % 1 === 0) {
+      return key % this.hashTable.length;
+    }
+
   }
 
   //Sets the key value item at a particular index (based on the hash method used).
@@ -26,14 +31,14 @@ export class HashTable {
 
     if (this.hashTable[index]) {
       for(let item of this.hashTable[index]) {
-        if (item[0] === key)
-          return item;
+          if (item[0] === key)
+            return item;
       }
     }
 
     return null;
   }
-
+  // searches for key and returns index
   search(key) {
     const index = this.#hash(key);
     if (this.hashTable[index] && this.hashTable[index].find(item => item[0] === key))
@@ -64,7 +69,29 @@ export class HashTable {
   get() {
     return this.hashTable;
   }
+
+  orderedByRemainders() {
+
+    // for (const key of array) {
+    //   const item = key % 10;
+    //   this.setItem(key, item)
+    // }
+
+    let finalArray = []
+
+    for (let item of this.hashTable) {
+      if (item){
+        for (let array of item) {
+          finalArray.push(array[0]);
+        }
+      }
+
+    }
+
+    return finalArray
+  }
 }
+
 
 
 /*

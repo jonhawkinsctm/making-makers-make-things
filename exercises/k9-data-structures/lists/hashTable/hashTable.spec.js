@@ -6,8 +6,10 @@ describe("Generic hash table tests", () => {
     expect(hashTable.length()).toBe(0);
 
     hashTable.setItem("someKey", "someValue");
+    hashTable.setItem("testKey", "testValue");
+    hashTable.setItem("anotherKey", "anotherValue")
 
-    expect(hashTable.length()).toBe(1);
+    expect(hashTable.length()).toBe(3);
   });
 
 
@@ -61,6 +63,8 @@ describe("Generic hash table tests", () => {
     hashTable.setItem("someKey", "someValue");
     expect(hashTable.length()).toBe(1);
 
+    console.log(hashTable.hashTable)
+
     expect(hashTable.delete("someOtherKey")).toEqual(false);
     expect(hashTable.length()).toBe(1);
   });
@@ -72,5 +76,15 @@ describe("Generic hash table tests", () => {
 
     expect(hashTable.length()).toBe(2);
   });
+
+  test("re order list by remainders", () => {
+    const hashTable = new HashTable();
+    const array = [10, 15, 12, 14, 17, 99, 43, 55]
+    for (const key of array) {
+      const item = key % 10;
+      hashTable.setItem(key, item)
+    }
+    expect(hashTable.orderedByRemainders(array)).toStrictEqual([10, 12, 43, 14, 15, 55, 17, 99])
+  })
 
 });
