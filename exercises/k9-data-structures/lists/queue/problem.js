@@ -48,7 +48,69 @@ export class Queue {
   get() {
      return this.queueItems;
   }
+
+  reverseFirstXElements(num = this.queueItems.length) {
+
+    // time complexity O(n)
+    // Space complexity O(1)
+
+    if (this.isEmpty()) {
+      return [];
+    }
+
+    if (num < 0 || num > this.queueItems.length) {
+      throw new Error("index outside of range");
+    }
+
+    let i = 0;
+    let j = num - 1;
+
+    while (i < j) {
+      [this.queueItems[i], this.queueItems[j]] = [this.queueItems[j], this.queueItems[i]];
+      i++;
+      j--;
+    }
+
+    return this.queueItems;
+
+  }
+
+
+  reverseElementsQueue(num = this.queueItems.length) {
+
+    // time complexity O(n)
+    // Space complexity O(n) - O(1) if you don't include the size of the array?
+
+    const lengthArray = this.queueItems.length
+
+    if (this.isEmpty()) {
+      return [];
+    }
+
+    if (num < 0 || num > lengthArray) {
+      throw new Error("index outside of range");
+    }
+
+    let output = new Array(lengthArray);
+
+    let i = num - 1;
+
+    for (let j = 0; j < lengthArray; j++) {
+        if (i >= 0) {
+          output[i] = this.queueItems[j];
+          i--;
+        } else {
+          output[j] = this.queueItems[j];
+        }
+    }
+
+    return output;
+
+  }
 }
+
+
+
 
 
 /*
